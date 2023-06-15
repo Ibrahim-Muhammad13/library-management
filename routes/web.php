@@ -20,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['perfix'=>'admin','middleware'=>['auth','superAdmin']],function () {
+    Route::resource("managers", App\Http\Controllers\ManagerController::class);   
+});
+
