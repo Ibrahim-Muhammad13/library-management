@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +28,4 @@ Route::group(['perfix'=>'admin','middleware'=>['auth','superAdmin']],function ()
 Route::get('/authors', function () {
     return view('authorCard');
 });
+// Route::get('/users',[HomeController::class,'users']) ->name('users');
