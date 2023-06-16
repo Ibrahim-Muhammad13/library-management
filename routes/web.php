@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +18,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+ 
+Route::resource('category', CategoryController::class);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['perfix'=>'admin','middleware'=>['auth','superAdmin']],function () {
-    Route::resource("managers", App\Http\Controllers\ManagerController::class);   
+    Route::resource("managers", App\Http\Controllers\ManagerController::class); 
+    Route::resource('category', CategoryController::class);
+  
 });
 
