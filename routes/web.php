@@ -25,6 +25,7 @@ Route::group(['perfix'=>'admin','middleware'=>['auth','superAdmin']],function ()
     Route::resource("managers", App\Http\Controllers\ManagerController::class);
 });
 
+
 Route::controller('App\Http\Controllers\AuthorController')->middleware(['auth','superAdmin'])->prefix('authors')->group(function(){
     Route::get('create','create')->name('author.create');
     Route::post('store','store')->name('author.store');
@@ -33,3 +34,7 @@ Route::controller('App\Http\Controllers\AuthorController')->middleware(['auth','
     Route::put('update/{id}','update')->name('author.update');
     Route::delete('destroy/{id}','destroy')->name('author.destroy');
 });
+Route::get('/category', function() {
+    return view('category');
+});
+
