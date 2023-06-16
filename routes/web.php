@@ -25,3 +25,6 @@ Route::group(['perfix'=>'admin','middleware'=>['auth','superAdmin']],function ()
     Route::resource("managers", App\Http\Controllers\ManagerController::class);   
 });
 
+Route::get('/authors', function () {
+    return view('authorCard');
+});
