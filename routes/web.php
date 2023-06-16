@@ -25,3 +25,6 @@ Route::group(['perfix'=>'admin','middleware'=>['auth','superAdmin']],function ()
     Route::resource("managers", App\Http\Controllers\ManagerController::class);   
 });
 
+Route::get('/category', function() {
+    return view('category');
+});
