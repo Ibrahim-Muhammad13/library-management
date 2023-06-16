@@ -1,0 +1,30 @@
+.py-4 .container .col .category-box {
+    background-color: white !important;
+}
+.py-4 .container hr {
+    margin: 1rem 0;
+    color: inherit;
+    border: 0;
+    border-top: var(--bs-border-width) solid;
+    opacity: 0.40;
+    width: 220px;
+}
+.py-4 .container .col .category-box:hover {
+    box-shadow: 1px 0px 9px 0px #000;
+    transition: 0.5s;
+}
+.py-4 .container .col .card-title {
+    font-weight: 600;
+}
+.py-4 .container .col .btn-ourBtn {
+    background-color: white;
+    color: #363535;
+    border-color: #ccc;
+    font-weight: bold;
+}
+.py-4 .container .col .btn-ourBtn:hover {
+    background-color: #ccc;
+    color: black;
+    border-color: #ccc;
+    transition: 0.5s;
+}

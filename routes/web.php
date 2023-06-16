@@ -26,8 +26,25 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['perfix'=>'admin','middleware'=>['auth','superAdmin']],function () {
+
     Route::resource("managers", App\Http\Controllers\ManagerController::class); 
     Route::resource('category', CategoryController::class);
   
+
+    Route::resource("managers", App\Http\Controllers\ManagerController::class);
+});
+
+
+Route::controller('App\Http\Controllers\AuthorController')->middleware(['auth','superAdmin'])->prefix('authors')->group(function(){
+    Route::get('create','create')->name('author.create');
+    Route::post('store','store')->name('author.store');
+    Route::get('index','index')->name('author.index');
+    Route::get('{id}/edit','edit')->name('author.edit');
+    Route::put('update/{id}','update')->name('author.update');
+    Route::delete('destroy/{id}','destroy')->name('author.destroy');
+});
+Route::get('/category', function() {
+    return view('category');
+
 });
 
