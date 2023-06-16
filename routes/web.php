@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\HomeController;
+
 use App\Http\Controllers\CategoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +52,7 @@ Route::get('/category', function() {
 
 });
 
+Route::get('/authors', function () {
+    return view('authorCard');
+});
+// Route::get('/users',[HomeController::class,'users']) ->name('users');
