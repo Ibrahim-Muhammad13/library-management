@@ -6,6 +6,11 @@
     </div>
 @endif
 <div class="container">
+    <div class="row">
+        <div class="col-2" style="margin-top: 200px">@extends('layouts.side')</div>
+        <div class="col-10">
+            <div class="w-50 m-auto">
+                <h2 class="text-center">Update Author</h2>
     {!! Form::model($author,['route' => ['author.update',$author],'method' => 'put']) !!}
         <div class="mb-3">
           <label for="author_name" class="form-label">Name</label>
@@ -16,5 +21,7 @@
         </div>
         {!! Form::submit('update',['class'=>'btn btn-success']) !!}
         {!! Form::close() !!}
+</div>
+    </div>
 </div>
 @endsection

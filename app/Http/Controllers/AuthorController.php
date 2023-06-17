@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 use App\Models\Author;
 
@@ -40,9 +41,13 @@ class AuthorController extends Controller
     {
         $request->validate([
             'author_name' => 'required|max:20',
+            'image' => 'required',
         ]);
+        $path = $request->file('image')->store('/public/AuthorsImages/');
+        Storage::makeDirectory(dirname($path));
         $author=new Author();
         $author->author_name=$request->author_name;
+        $author->path=$path;
         $author->save();
         return redirect()->route('author.index')->with('success','Author Added');
     }
@@ -98,6 +103,6 @@ class AuthorController extends Controller
     public function destroy($id)
     {
         Author::destroy($id);
-        return back()->with('success', 'Author Deleted');
+        return back()->with('danger', 'Author Deleted');
     }
 }
