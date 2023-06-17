@@ -6,13 +6,18 @@
         <div class="col-10">
             <div class="w-50 m-auto">
                 <h2 class="text-center">Add Author</h2>
-    {!! Form::open(['route' => 'author.store','method' => 'post']) !!}
+    {!! Form::open(['route' => 'author.store','method' => 'post','enctype' => 'multipart/form-data']) !!}
         <div class="mb-3">
         <label for="name" class="form-label">Name</label>
         {!!Form::text('author_name',null,['class'=>'form-control'])!!}
         @error('author_name')
     <div class="alert alert-danger">{{ $message }}</div>
         @enderror
+        <label for="" class="form-label">Image</label>
+        <input type="file" name="image" class="form-control">
+        @error('image')
+        <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
         </div>
         {!! Form::submit('Add',['class'=>'btn btn-success']) !!}
         {!! Form::close() !!}
