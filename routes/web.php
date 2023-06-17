@@ -22,8 +22,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
- 
-Route::resource('category', CategoryController::class);
+
+// Route::resource('category', CategoryController::class);
 
 Auth::routes();
 
@@ -31,9 +31,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::group(['perfix'=>'admin','middleware'=>['auth','superAdmin']],function () {
 
-    Route::resource("managers", App\Http\Controllers\ManagerController::class); 
+    Route::resource("managers", App\Http\Controllers\ManagerController::class);
     Route::resource('category', CategoryController::class);
-  
+
 
     Route::resource("managers", App\Http\Controllers\ManagerController::class);
 });
@@ -47,10 +47,14 @@ Route::controller('App\Http\Controllers\AuthorController')->middleware(['auth','
     Route::put('update/{id}','update')->name('author.update');
     Route::delete('destroy/{id}','destroy')->name('author.destroy');
 });
-Route::get('/category', function() {
-    return view('category');
+// Route::get('/category', function() {
+//     return view('category');
 
-});
+// });
+
+Route::get('dash-board', function() {
+    return view('dash');
+})->middleware(['auth', 'superAdmin']);
 
 Route::get('/authors', function () {
     return view('authorCard');

@@ -41,6 +41,7 @@ class AuthorController extends Controller
         $request->validate([
             'author_name' => 'required|max:20',
         ]);
+
         $author=new Author();
         $author->author_name=$request->author_name;
         $author->save();
@@ -98,6 +99,6 @@ class AuthorController extends Controller
     public function destroy($id)
     {
         Author::destroy($id);
-        return back()->with('success', 'Author Deleted');
+        return back()->with('danger', 'Author Deleted');
     }
 }
