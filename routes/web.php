@@ -1,11 +1,12 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\CategoryController;
-
+use App\Models\Book;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Route::get('/', function () {
 });
 
  
-Route::resource('category', CategoryController::class);
+
 
 Auth::routes();
 
@@ -33,7 +34,8 @@ Route::group(['perfix'=>'admin','middleware'=>['auth','superAdmin']],function ()
 
     Route::resource("managers", App\Http\Controllers\ManagerController::class); 
     Route::resource('category', CategoryController::class);
-  
+    Route::resource('book', BookController::class);
+
 
     Route::resource("managers", App\Http\Controllers\ManagerController::class);
 });
@@ -47,10 +49,10 @@ Route::controller('App\Http\Controllers\AuthorController')->middleware(['auth','
     Route::put('update/{id}','update')->name('author.update');
     Route::delete('destroy/{id}','destroy')->name('author.destroy');
 });
-Route::get('/category', function() {
-    return view('category');
+// Route::get('/category', function() {
+//     return view('category');
 
-});
+// });
 
 Route::get('/authors', function () {
     return view('authorCard');
