@@ -47,7 +47,7 @@
                             <td><img src="{{asset($book->image)}}" width="90"></td>
                             <td>{{$book->title}}</td>
                             <td>{{$book->description}}</td>
-                            <td>{{$book->category_id}}</td>
+                            <td>@foreach($book->categories as $category){{$category->name}}<br>@endforeach</td>
                             <td>{{$book->author->name}}</td>
                             <td><a href="{{route('book.edit',$book->id)}}" class="btn btn-primary ">Edit</a></td>
                             <form action="{{route('book.destroy',$book->id)}}" method="POST">
