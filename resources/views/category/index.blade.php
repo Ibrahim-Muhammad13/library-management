@@ -1,7 +1,9 @@
 @extends('layouts.app')
 @section('content')
-
-<div class="col-md-12">
+<div class="container">
+<div class="row">
+    <div class="col-2" style="margin-top: 200px">@extends('layouts.side')</div>
+<div class="col-10">
     <div class="card">
     <a href="{{route('category.create')}}" type="submit" class="btn btn-primary col-md-4">Add Category</a>
         <div class="card-header text-center">category</div>
@@ -33,10 +35,10 @@
                             @method('delete')
                             @csrf
                             <td>
-                               
+
                                 <button type="submit" class="btn btn-danger">Delete</button>
                             </td>
-                         
+
                         </form>
 
                     </tr>
@@ -46,5 +48,7 @@
 
         </div>
     </div>
+</div>
+</div>
 </div>
 @endsection
