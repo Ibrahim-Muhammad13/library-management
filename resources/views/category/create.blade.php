@@ -4,6 +4,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
+        <div class="col-2" style="margin-top: 200px">@extends('layouts.side')</div>
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header text-center">
@@ -35,5 +36,5 @@
         </div>
 
 
-       
+
         @endsection
