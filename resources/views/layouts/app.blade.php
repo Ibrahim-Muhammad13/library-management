@@ -24,8 +24,8 @@
                     {{ config('app.name', 'Laravel') }}
                 </a>
 
-                <a class="navbar-brand" href="{{ route('category.index') }}">
-                    {{  'Categories' }}
+                {{-- <a class="navbar-brand" href="{{ route('category.index') }}">
+                    {{  'Categories' }} --}}
 
                 <a class="navbar-brand" href="{{ url('/authors/index') }}">
                     {{ config('Authors', 'Authors') }}

@@ -2,7 +2,7 @@
 @section('content')
 <div class="categories">
 <div class="container">
-    <h1 class="display-4 my-4">All Categories<h1>
+    <h1 class="display-4 my-4">All Categories <h1>
         <hr>
     <div class="row">
         <div class="col my-2">
