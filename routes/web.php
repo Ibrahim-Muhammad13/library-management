@@ -6,7 +6,8 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\CategoryController;
 
-
+use App\Http\Controllers\front\FrontController;
+use App\Http\Controllers\AuthorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,7 +55,5 @@ Route::get('dash-board', function() {
 
 Route::get('/category', [App\Http\Controllers\front\FrontController::class, 'frontCategory']);
 
-Route::get('/authors', function () {
-    return view('authorCard');
-});
+Route::get('/authors', [App\Http\Controllers\front\FrontController::class,'frontAuthor'])->name('author.front');
 // Route::get('/users',[HomeController::class,'users']) ->name('users');
