@@ -18,44 +18,49 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-
-                <a class="navbar-brand" href="{{ url('/category')}}">
-                    {{  config('Categories','Categories') }}
-                </a>
-
+        <nav class="navbar navbar-expand-lg bg-dark shadow-sm" data-bs-theme="dark">
+            <div class="container-fluid">
+                
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        Books<b>Library</b> <i class="fas fa-book-open"></i>
+                    </a>
+                    {{-- {{ config('app.name', 'Laravel') }} --}}
+                
                 {{-- <a class="navbar-brand" href="{{ route('category.index') }}">
                     {{  'Categories' }} --}}
-                    @auth
-                <a class="navbar-brand" href="{{ url('/dash-board') }}">
-                    {{ config('DashBoard', 'DashBoard') }}
-
-                <a class="navbar-brand" href="{{ url('category') }}">
-                    {{  'Categories' }}
-
-                <a class="navbar-brand" href="{{ url('/authors/index') }}">
-                    {{ config('Authors', 'Authors') }}
-
-
-                </a>
-                <a class="navbar-brand" href="{{ url('/book')}}">
-                    {{  config('Books','Books') }}
-                </a>
-                @endauth
+                    
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
+                    {{-- <ul class="navbar-nav me-auto">--}}
+                    @auth
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/dash-board') }}">
+                            {{ config('DashBoard', 'DashBoard') }}
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="{{ url('category') }}">
+                            {{ 'Categories' }}
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/authors/index') }}">
+                            {{ config('Authors', 'Authors') }}
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/book')}}">
+                            {{  config('Books','Books') }}
+                        </a>
+                        </li>
                     </ul>
-
+                @endauth
+                    {{--</ul> --}}
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->

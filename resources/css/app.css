@@ -1,3 +1,14 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+body {
+  height: 100vh;
+  background-color: #373b3e;
+}
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgb(102 102 102 / 24%) !important
+}
+.shadow-sm-me {
+  box-shadow: 0 0.125rem 1rem 1px rgb(154 154 154 / 46%) !important;
+}
 .py-4 .container .col .category-box {
     background-color: white !important;
 }
