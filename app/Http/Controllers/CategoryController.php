@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
-
+use Illuminate\Validation\Rule;
 class CategoryController extends Controller
 {
     /**
@@ -41,7 +41,7 @@ class CategoryController extends Controller
        $data = $request->all();
      
         $request->validate([
-        'name' => ['required','unique:categories','max:20'],
+        'name' => ['required','max:20','unique:categories'],
         'description' => 'required',
     ]);
        
@@ -92,7 +92,8 @@ class CategoryController extends Controller
    //  dd($cat_data->name);
    //dd($request);
         $request->validate([
-        'name' => ['required','unique:categories','max:20'],
+           
+        'name' => ['required','max:20', Rule::unique('categories')->ignore($cat_data->id, 'id')],
         'description' => 'required',
     ]);
        
