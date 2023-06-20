@@ -48,7 +48,7 @@
                             <td>{{$book->title}}</td>
                             <td>{{$book->description}}</td>
                             <td>@foreach($book->categories as $category){{$category->name}}<br>@endforeach</td>
-                            <td>{{$book->author->name}}</td>
+                            <td>{{$book->author->author_name}}</td>
                             <td><a href="{{route('book.edit',$book->id)}}" class="btn btn-primary ">Edit</a></td>
                             <form action="{{route('book.destroy',$book->id)}}" method="POST">
                             @method('delete')
