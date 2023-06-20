@@ -4,8 +4,8 @@
 <div class="container">
 <!-- Search form -->
 <form action="{{ route('search') }}" method="GET" class="mb-3 search-form">
-    <div>
-        <button type="submit" class="btn btn-primary">Search</button>
+    <div class="w-50">
+        <button type="submit" class="btn btn-primary">Search <i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
     <div class="input-group">
         <input type="text" name="term" placeholder="Search by title or author" value="{{ request('term') }}" class="form-control">
@@ -36,9 +36,9 @@
         <div class="row">
             @foreach ($books as $book)
             <div class="col-md-4 d-flex justify-content-center">
-            <div class="card my-4" style="width: 18rem;">
+            <div class="card my-4 bg-gray" style="width: 18rem;">
                 <img class="card-img-top" src="{{$book->image}}" alt="Card image cap">
-                <div class="card-body">
+                <div class="card-body books-card">
                   <h5 class="card-title">book name: {{ $book->title }}</h5>
                   <h5>author name: {{ $book->author->author_name }}</h5>
                   <p class="card-text">desc: {{$book->description}}</p>
