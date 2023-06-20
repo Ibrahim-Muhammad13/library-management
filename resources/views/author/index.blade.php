@@ -21,8 +21,10 @@
               <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
+                <th scope="col">Num of books</th>
                 <th scope="col">Update</th>
                 <th scope="col">Delete</th>
+
               </tr>
             </thead>
             <tbody>
@@ -30,6 +32,7 @@
                 @foreach ($authors as $author)
                 <th scope="row">{{ $loop->iteration }}</th>
                 <td>{{$author->author_name}}</td>
+                <td>{{$author->books->count()}}</td>
                 <td>
                     <a href="{{ route('author.edit',$author->id) }}" type="button" class="btn btn-primary me-2" value="edit">edit
                     </td>
