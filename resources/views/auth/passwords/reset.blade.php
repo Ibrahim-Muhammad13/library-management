@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card shadow-sm-me" style="background-color: #495057; color: white">
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
                 <div class="card-body">
