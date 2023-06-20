@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 use App\Models\Author;
-
+use Illuminate\Support\Facades\DB;
 class AuthorController extends Controller
 {
     /**
