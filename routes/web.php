@@ -52,9 +52,12 @@ Route::get('dash-board', function() {
     return view('dash');
 })->middleware(['auth', 'superAdmin']);
 
-Route::get('/category', [App\Http\Controllers\front\FrontController::class, 'frontCategory']);
+// Route::get('/category', [App\Http\Controllers\front\FrontController::class, 'frontCategory']);
 
 Route::get('/authors', function () {
     return view('authorCard');
 });
 // Route::get('/users',[HomeController::class,'users']) ->name('users');
+
+
+Route::get('search', [App\Http\Controllers\front\FrontController::class, 'search'])->name('search');

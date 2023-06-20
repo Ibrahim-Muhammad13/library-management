@@ -39,12 +39,14 @@
 
                 <a class="navbar-brand" href="{{ url('/authors/index') }}">
                     {{ config('Authors', 'Authors') }}
-
-
                 </a>
                 <a class="navbar-brand" href="{{ url('/book')}}">
                     {{  config('Books','Books') }}
                 </a>
+                <a class="navbar-brand" href="{{ url('/search') }}">
+                    {{ config('Search', 'Search') }}
+                </a>
+                
                 @endauth
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
