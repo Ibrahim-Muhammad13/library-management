@@ -42,9 +42,10 @@
               
                     <div>
                         <label for="select">select category</label>
-                        <select name="categories[]" class="form-control" multiple>
-                        <option >Select Category</option>
-                            @foreach($categorys as $cat)          
+                        <select name="categories[]" class="form-control">
+                        {{-- <option>Select Category</option> --}}
+                        {{-- <option value="{{$categorys->id}}">{{$categorys->name}}</option> --}}
+                            @foreach($categorys as $cat)
                             <option value="{{$cat->id}}">{{$cat->name}}</option>
                             @endforeach
                         </select>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 use App\Models\Author;
+use Intervention\Image\Facades\Image;
 
 class AuthorController extends Controller
 {
@@ -43,11 +44,17 @@ class AuthorController extends Controller
             'author_name' => 'required|max:20',
             'image' => 'required',
         ]);
-        $path = $request->file('image')->store('/public/AuthorsImages/');
-        Storage::makeDirectory(dirname($path));
-        $author=new Author();
-        $author->author_name=$request->author_name;
-        $author->path=$path;
+
+        $image = $request->file('image');
+        $name_gen =  hexdec(uniqid()) . '.' . $image->getClientOriginalExtension();
+        Image::make($image)->resize(300, 300)->save('upload/authors/' . $name_gen);
+        $save_url = 'upload/authors/' . $name_gen;
+        // $path = $request->file('image')->store('/public/AuthorsImages/');
+        // Storage::makeDirectory(dirname($path));
+
+        $author = new Author();
+        $author->author_name = $request->author_name;
+        $author->path = $save_url;
         $author->save();
         return redirect()->route('author.index')->with('success','Author Added');
     }

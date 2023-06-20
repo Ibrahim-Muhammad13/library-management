@@ -43,7 +43,7 @@
                         @if(count($books) > 0)
                         @foreach($books as $key => $book)
                         <tr>
-                            <th scope="row">{{$key =$key+1}} </th>
+                            <th scope="row">{{$key = $key+1}} </th>
                             <td><img src="{{asset($book->image)}}" width="90"></td>
                             <td>{{$book->title}}</td>
                             <td>{{$book->description}}</td>

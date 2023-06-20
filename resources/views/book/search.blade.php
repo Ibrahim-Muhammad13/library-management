@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-
+<div class="container">
 <!-- Search form -->
-<form action="{{ route('search') }}" method="GET" class="mb-3">
+<form action="{{ route('search') }}" method="GET" class="mb-3 search-form">
+    <div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
     <div class="input-group">
         <input type="text" name="term" placeholder="Search by title or author" value="{{ request('term') }}" class="form-control">
     </div>
@@ -25,16 +28,15 @@
         </select>
         {{-- <button type="submit" class="btn btn-primary">Filter</button> --}}
     </div>
-    <button type="submit" class="btn btn-primary">Search</button>
-
 </form>
-
-    <div class="container">
+</div>
+    <div class="container my-5">
+        <h3 class="display-3">All Books</h3>
+        <hr style="border:1px solid">
         <div class="row">
-            
             @foreach ($books as $book)
-            <div class="col-md-4">
-            <div class="card" style="width: 18rem;">
+            <div class="col-md-4 d-flex justify-content-center">
+            <div class="card my-4" style="width: 18rem;">
                 <img class="card-img-top" src="{{$book->image}}" alt="Card image cap">
                 <div class="card-body">
                   <h5 class="card-title">book name: {{ $book->title }}</h5>

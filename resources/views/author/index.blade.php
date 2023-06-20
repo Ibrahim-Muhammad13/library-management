@@ -4,7 +4,8 @@
     <div class="row">
       <div class="col-2" style="margin-top: 200px">@extends('layouts.side')</div>
       <div class="col-10">
-<h2 class="text-center nav-underline">Authors</h2>
+        <h3 class="display-3">Authors</h3>
+        <hr style="border: 1px solid">
 @if (session()->has('success'))
 <div class="container alert alert-success text-center">
     {{ session('success') }}
@@ -15,11 +16,13 @@
     {{ session('danger') }}
     </div>
 @endif
+<div class="card bg-gray">
         <a href="{{ route('author.create') }}" type="button" class="btn btn-primary mb-1 float-end" value="Add">Add Author</a>
         <table class="table table-dark table-hover text-center">
             <thead>
               <tr>
                 <th scope="col">#</th>
+                <th scope="col">Image</th>
                 <th scope="col">Name</th>
                 <th scope="col">Update</th>
                 <th scope="col">Delete</th>
@@ -29,6 +32,7 @@
               <tr>
                 @foreach ($authors as $author)
                 <th scope="row">{{ $loop->iteration }}</th>
+                <td><img src="{{asset($author->path)}}" width="90"></td>
                 <td>{{$author->author_name}}</td>
                 <td>
                     <a href="{{ route('author.edit',$author->id) }}" type="button" class="btn btn-primary me-2" value="edit">edit
@@ -44,6 +48,7 @@
                 @endforeach
             </tbody>
           </table>
+        </div>
       </div>
     </div>
   </div>
