@@ -50,7 +50,7 @@
                     <option value="" selected disabled>select role</option>
                     <option value="1">super admin</option>
                     <option value="2">manger</option>
-                    <option value="3">viewer</option>
+                    <option value="0">viewer</option>
                 </select>
                 @error('role')
                     <div class="alert alert-danger mt-2">{{ $message }}</div>

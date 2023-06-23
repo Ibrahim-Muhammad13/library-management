@@ -10,7 +10,7 @@
             <div class="card bg-gray shadow-sm-me" style="width: 18rem;">
                 <div class="card-body">
                     <h3 class="card-title">{{$category->name}}</h3>
-                    <a href="{{ url('frontcategory', $category->id) }}" class="btn btn-primary btn-ourBtn">Go somewhere</a>
+                    <a href="{{ url('categories', $category->id) }}" class="btn btn-primary btn-ourBtn">see books</a>
                 </div>
             </div>
         </div>

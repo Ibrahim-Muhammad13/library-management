@@ -13,7 +13,9 @@
             </div>
         @endif
         <div class="card bg-gray">
-            <a href="{{ route('managers.create') }}" class="btn btn-primary col-md-4 btn-category">Add Manager <i class="fas fa-plus"></i></a>
+          @if (Auth::user()->role == 1)
+          <a href="{{ route('managers.create') }}" class="btn btn-primary col-md-4 btn-category">Add Manager <i class="fas fa-plus"></i></a>
+            @endif
             <div class="card-body">
             <table class="table table-bordered text-center">
                 <thead>
@@ -30,6 +32,7 @@
                                     <td>{{ $manager->id }}</td>
                                     <td>{{ $manager->name }}</td>
                                     <td>{{ $manager->email }}</td>
+                                   @if (Auth::user()->role == 1)
                                     <td>
                                         <a href="{{ route('managers.edit', $manager->id) }}" class="btn btn-success">Edit <i class="fas fa-pen-to-square"></i></a>
                                         <form action="{{ route('managers.destroy', $manager->id) }}" method="POST" class="d-inline">
@@ -38,6 +41,7 @@
                                             <button type="submit" class="btn btn-danger">Delete <i class="fas fa-trash-can"></i></button>
                                         </form>
                                     </td>
+                                    @endif
                                 </tr>
                             @endforeach
                         </tbody>

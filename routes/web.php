@@ -52,13 +52,9 @@ Route::get('dash-board', function() {
     return view('dash');
 })->middleware(['auth', 'superAdmin']);
 
-Route::get('/frontcategory', [App\Http\Controllers\front\FrontController::class, 'frontCategory']);
-Route::get('/frontcategory/{category}', [App\Http\Controllers\front\FrontController::class, 'showBooksInCategory']);
+// Route::get('/frontcategory', [App\Http\Controllers\front\FrontController::class, 'frontCategory']);
+Route::get('/categories/{category}', [App\Http\Controllers\front\FrontController::class, 'showBooksInCategory']);
+Route::get('/categories', [App\Http\Controllers\front\FrontController::class, 'frontCategory']);
 
-Route::get('/authors', function () {
-    return view('authorCard');
-});
-// Route::get('/users',[HomeController::class,'users']) ->name('users');
-
-
-Route::get('search', [App\Http\Controllers\front\FrontController::class, 'search'])->name('search');
+Route::get('/authors', [App\Http\Controllers\front\FrontController::class,'frontAuthor'])->name('author.front');
+Route::get('booksList', [App\Http\Controllers\front\FrontController::class, 'search'])->name('search');
