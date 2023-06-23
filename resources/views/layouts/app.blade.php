@@ -33,26 +33,23 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    {{-- <ul class="navbar-nav me-auto">--}}
-                    {{--</ul> --}}
                     @auth
                     <ul class="navbar-nav ms-auto">
                         <a class="navbar-brand" href="{{ url('/dash-board') }}">
                             {{ config('DashBoard', 'DashBoard') }}
                         </a>
-                        <a class="navbar-brand" href="{{ url('category') }}">
+                        <a class="navbar-brand" href="{{ url('categories') }}">
                             {{  'Categories' }}
                         </a>
-                        <a class="navbar-brand" href="{{ url('/authors/index') }}">
+                        <a class="navbar-brand" href="{{ url('/authors') }}">
                             {{ config('Authors', 'Authors') }}
                         </a>
-                        <a class="navbar-brand" href="{{ url('/book')}}">
+                        <a class="navbar-brand" href="{{ url('/booksList')}}">
                             {{  config('Books','Books') }}
                         </a>
-                        <a class="navbar-brand" href="{{ url('/search') }}">
+                        {{-- <a class="navbar-brand" href="{{ url('/search') }}">
                             {{ config('Search', 'Search') }}
-                        </a>
+                        </a> --}}
                     </ul>
                     @endauth
                     <!-- Right Side Of Navbar -->
