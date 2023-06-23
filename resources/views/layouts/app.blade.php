@@ -16,41 +16,45 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js', 'resources/css/app.css'])
 </head>
-<body>
+<body style="color: white">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-
-                    @auth
-                    @if(Auth::user()->role !=0)
-                <a class="navbar-brand" href="{{ url('/dash-board') }}">
-                    {{ config('DashBoard', 'DashBoard') }}
-                </a>
-                @endif
-                <a class="navbar-brand" href="{{ url('categories') }}">
-                    {{  'Categories' }}
-
-                <a class="navbar-brand" href="{{ url('/authors') }}">
-                    {{ config('Authors', 'Authors') }}
-                </a>
-                <a class="navbar-brand" href="{{ url('/booksList') }}">
-                    {{ config('books', 'books') }}
-                </a>
+        <nav class="navbar navbar-expand-lg bg-dark shadow-sm" data-bs-theme="dark">
+            <div class="container-fluid">
                 
-                @endauth
+                    <a class="navbar-brand" href="{{ url('/') }}">
+                        Books<b>Library</b> <i class="fas fa-book-open"></i>
+                    </a>
+                    {{-- {{ config('app.name', 'Laravel') }} --}}
+                
+                {{-- <a class="navbar-brand" href="{{ route('category.index') }}">
+                    {{  'Categories' }} --}}
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
+                    {{-- <ul class="navbar-nav me-auto">--}}
+                    {{--</ul> --}}
+                    @auth
+                    <ul class="navbar-nav ms-auto">
+                        <a class="navbar-brand" href="{{ url('/dash-board') }}">
+                            {{ config('DashBoard', 'DashBoard') }}
+                        </a>
+                        <a class="navbar-brand" href="{{ url('category') }}">
+                            {{  'Categories' }}
+                        </a>
+                        <a class="navbar-brand" href="{{ url('/authors/index') }}">
+                            {{ config('Authors', 'Authors') }}
+                        </a>
+                        <a class="navbar-brand" href="{{ url('/book')}}">
+                            {{  config('Books','Books') }}
+                        </a>
+                        <a class="navbar-brand" href="{{ url('/search') }}">
+                            {{ config('Search', 'Search') }}
+                        </a>
                     </ul>
-
+                    @endauth
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->

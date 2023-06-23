@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>BooksLibrary</title>
 
         <!-- Fonts -->
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
             }
             #hero {
                 width: 100%;
-                height: 80%;
+                height: 100vh;
                 background: url(https://wallpapercave.com/wp/wp9502467.jpg) top center;
                 background-size: cover;
                 position: relative;
@@ -67,9 +67,9 @@
         </style>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Books<b>Library</b></a>
+              <a class="navbar-brand" href="{{ url('/') }}">Books<b>Library</b> <i class="fas fa-book-open"></i></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -99,7 +99,7 @@
         <div class="position-relative" data-aos="zoom-in" data-aos-delay="100">
             <h1>Are You Decided what to read?</h1>
             <h2>explore our library and have fun</h2>
-            <a href="#" class="btn-get-started">Explore Now</a>
+            <a href="{{ route('register') }}" class="btn-get-started">Join Us Now</a>
         </div>
     </section>
     </body>

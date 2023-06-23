@@ -1,3 +1,18 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
+body {
+  height: 100vh;
+  /* background-color: #373b3e; */
+  background-image: url(background.jpg);
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-position: center;
+}
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgb(102 102 102 / 24%) !important
+}
+.shadow-sm-me {
+  box-shadow: 0 0.125rem 1rem 1px rgb(154 154 154 / 46%) !important;
+}
 .py-4 .container .col .category-box {
     background-color: white !important;
 }
@@ -118,4 +133,55 @@
 }
 .list-hover-slide a.is-current:before, .list-hover-slide a:hover:before {
   left: 0;
+}
+.search-form {
+  display: flex;
+  justify-content: stretch;
+}
+.search-form > div {
+  margin-left: 15px;
+}
+.search-form button {
+  background: none;
+}
+.search-form button:hover {
+  background-color: #0d6efd;
+}
+.bg-gray table {
+  border-color: #525252;
+}
+.bg-gray th {
+  text-transform: capitalize;
+}
+.bg-gray, .bg-gray tr, .bg-gray td, .bg-gray thead, .bg-gray th {
+  background-color: #6a6a6a;
+  color: white;
+}
+label {
+  font-size: 18;
+  text-transform: capitalize;
+}
+.btn-category {
+  margin-left: auto;
+  margin-top: 5px;
+  margin-right: 20px;
+  width: 140px;
+}
+.show-image {
+  position: absolute;
+  left: 60px;
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 6px;
+}
+.img-style {
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 6px;
+}
+.books-card {
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

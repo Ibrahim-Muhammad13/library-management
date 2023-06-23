@@ -8,7 +8,7 @@
             <ul class="unstyled list-hover-slide">
               <li><a href="/managers">Users</a></li>
               <li><a href="#">Books</a></li>
-              <li><a href="/category">Categories</a></li>
+              <li><a href="/category/index">Categories</a></li>
               <li><a href="/authors/index">Authors</a></li>
             </ul>
           </nav>
