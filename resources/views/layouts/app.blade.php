@@ -24,27 +24,20 @@
                     {{ config('app.name', 'Laravel') }}
                 </a>
 
-                <a class="navbar-brand" href="{{ url('/category')}}">
-                    {{  config('Categories','Categories') }}
-                </a>
-
-                {{-- <a class="navbar-brand" href="{{ route('category.index') }}">
-                    {{  'Categories' }} --}}
                     @auth
+                    @if(Auth::user()->role !=0)
                 <a class="navbar-brand" href="{{ url('/dash-board') }}">
                     {{ config('DashBoard', 'DashBoard') }}
-
-                <a class="navbar-brand" href="{{ url('category') }}">
+                </a>
+                @endif
+                <a class="navbar-brand" href="{{ url('categories') }}">
                     {{  'Categories' }}
 
-                <a class="navbar-brand" href="{{ url('/authors/index') }}">
+                <a class="navbar-brand" href="{{ url('/authors') }}">
                     {{ config('Authors', 'Authors') }}
                 </a>
-                <a class="navbar-brand" href="{{ url('/book')}}">
-                    {{  config('Books','Books') }}
-                </a>
-                <a class="navbar-brand" href="{{ url('/search') }}">
-                    {{ config('Search', 'Search') }}
+                <a class="navbar-brand" href="{{ url('/booksList') }}">
+                    {{ config('books', 'books') }}
                 </a>
                 
                 @endauth
