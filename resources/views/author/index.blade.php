@@ -25,8 +25,10 @@
                 <th scope="col">#</th>
                 <th scope="col">Image</th>
                 <th scope="col">Name</th>
+                <th scope="col">Num of books</th>
                 <th scope="col">Update</th>
                 <th scope="col">Delete</th>
+
               </tr>
             </thead>
             <tbody>
@@ -35,6 +37,7 @@
                 <th scope="row">{{ $loop->iteration }}</th>
                 <td><img src="{{asset($author->path)}}" width="90" class="img-style"></td>
                 <td>{{$author->author_name}}</td>
+                <td>{{$author->books->count()}}</td>
                 <td>
                     <a href="{{ route('author.edit',$author->id) }}" type="button" class="btn btn-success" value="edit">Edit <i class="fas fa-pen-to-square"></i>
                     </td>

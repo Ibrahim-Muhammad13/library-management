@@ -52,7 +52,8 @@ Route::get('dash-board', function() {
     return view('dash');
 })->middleware(['auth', 'superAdmin']);
 
-// Route::get('/category', [App\Http\Controllers\front\FrontController::class, 'frontCategory']);
+Route::get('/frontcategory', [App\Http\Controllers\front\FrontController::class, 'frontCategory']);
+Route::get('/frontcategory/{category}', [App\Http\Controllers\front\FrontController::class, 'showBooksInCategory']);
 
 Route::get('/authors', function () {
     return view('authorCard');
