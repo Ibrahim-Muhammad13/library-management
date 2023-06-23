@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
 use App\Models\Author;
 use Intervention\Image\Facades\Image;
-
+use Illuminate\Support\Facades\DB;
 class AuthorController extends Controller
 {
     /**
