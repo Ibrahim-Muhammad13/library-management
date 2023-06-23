@@ -99,7 +99,7 @@
         <div class="position-relative" data-aos="zoom-in" data-aos-delay="100">
             <h1>Are You Decided what to read?</h1>
             <h2>explore our library and have fun</h2>
-            <a href="#" class="btn-get-started">Explore Now</a>
+            <a href="{{ route('register') }}" class="btn-get-started">Join Us Now</a>
         </div>
     </section>
     </body>
