@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Manager;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ManagerController extends Controller
 {
@@ -45,8 +46,15 @@ class ManagerController extends Controller
             'password' => 'required',
             'role' => 'required',
         ]);
-    
-        User::create($validatedData);
+        
+        User::create(
+            [
+                'name' => $validatedData['name'],
+                'email' => $validatedData['email'],
+                'password' => Hash::make($validatedData['password']),
+                'role' => $validatedData['role'],
+            ]
+        );
       return redirect('/managers/create')->with('success', 'Manager is successfully saved');
     
     }
