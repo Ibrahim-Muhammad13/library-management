@@ -17,6 +17,12 @@ class FrontController extends Controller
         return view('category', ['categories' => $categories]);
     }
 
+        public function showBooksInCategory($categoryID) {
+
+            $category = Category::find($categoryID);
+            $books = $category->books;
+            return view('booksincategory', compact('category', 'books'));
+        } 
     public function frontAuthor()
     {
         $authors = Author::all();
